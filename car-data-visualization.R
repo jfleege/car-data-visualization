@@ -24,11 +24,21 @@ cars2025 %>%
   coord_flip() +
   labs(title = "Number of Cars by Company", x = "Company", y = "Count")
 
+# saves the images to post to github
+ggsave("images/cars-bar-chart.png", width = 7, height = 5)
+
+
+
 
 # makes a scatter-plot that displays the horse-power in relation to its price
 ggplot(cars2025, aes(x = HorsePower_num, y = Price_num)) +
   geom_point(alpha = 0.7) +
   labs(title = "HorsePower vs. Price", x = "HorsePower (hp)", y = "Price ($)")
+
+# saves the images to post to github
+ggsave("images/hp-vs-price.png", width = 7, height = 5)
+
+
 
 
 # makes a box-plot that displays the horse-power in relation to its fuel type
@@ -36,3 +46,5 @@ ggplot(cars2025, aes(x = `Fuel Types`, y = HorsePower_num)) +
   geom_boxplot() +
   labs(title = "HorsePower Distribution by Fuel Type", y = "HorsePower")
 
+# saves the images to post to github
+ggsave("images/fueltype-boxplot.png", width = 7, height = 5)
